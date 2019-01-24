@@ -1,0 +1,432 @@
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+SC");
+@import url("https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css");
+@font-face {
+  font-family: RobotoMono;
+  src: url("./RobotoMono-Regular.ttf"); }
+* {
+  outline: none; }
+
+a {
+  font-family: RobotoMono, sans-serif;
+  color: #000;
+  text-decoration: none; }
+
+button {
+  font-size: 1rem;
+  color: #000;
+  padding: 0px;
+  font-weight: 800;
+  font-family: RobotoMono, sans-serif;
+  position: relative;
+  display: flex;
+  padding: 5px 8px;
+  border: 2px solid #000; }
+  button:hover {
+    background: #000;
+    color: #fff; }
+
+.bm-burger-button {
+  position: fixed;
+  left: 36px;
+  top: 3.5rem; }
+  .bm-burger-button:hover .bm-icon {
+    background: #000;
+    color: #fff; }
+
+#show-work {
+  position: fixed;
+  left: 36px;
+  bottom: 3.5rem; }
+
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+  background: #a90000; }
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px; }
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7; }
+
+/*
+Sidebar wrapper styles
+Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+*/
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+  max-width: 100%; }
+
+/* General sidebar styles */
+.bm-menu {
+  background: #000;
+  padding: 2em 1em 0;
+  font-size: 1.15em; }
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #000; }
+
+/* Wrapper for item list */
+.bm-item-list {
+  font-family: RobotoMono, monospace;
+  padding: 0.8em; }
+  .bm-item-list h3,
+  .bm-item-list p {
+    color: #fff; }
+  .bm-item-list p {
+    letter-spacing: -1px; }
+
+#message {
+  width: 100%;
+  font-size: 1rem;
+  min-height: 5em;
+  background: transparent;
+  border: 2px solid #fff;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: RobotoMono, monospace;
+  padding: 0.5em; }
+
+#message + button {
+  color: #fff;
+  background: transparent;
+  box-sizing: border-box;
+  border: 2px solid #fff;
+  margin-top: 1em; }
+  #message + button:hover {
+    background: #fff;
+    color: #000; }
+
+/* Individual item */
+.bm-item {
+  display: inline-block; }
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3); }
+
+.bm-burger-bars {
+  background: #000; }
+
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative; }
+
+.swipe-wrap {
+  overflow: hidden;
+  position: relative; }
+
+.swipe-wrap > div {
+  float: left;
+  width: 100%;
+  position: relative; }
+
+.Home-social {
+  position: fixed;
+  top: 3.5rem;
+  right: 34px;
+  z-index: 3; }
+  .Home-social a {
+    margin: 0 5px; }
+  .Home-social .ion {
+    width: 31px;
+    line-height: 31px;
+    text-align: center;
+    border: 2px solid;
+    background: #fff; }
+    .Home-social .ion:hover {
+      color: #fff;
+      background: #000; }
+
+#Home {
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  font-family: RobotoMono, sans-serif; }
+  #Home .background {
+    transition: all 1s ease 1s;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0; }
+    #Home .background.roll {
+      animation-name: agendaPolygon;
+      animation-fill-mode: forwards;
+      animation-duration: 0.5s; }
+  #Home video {
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    bottom: 0; }
+  #Home .Home-buttons,
+  #Home .About-buttons {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: space-between; }
+  #Home .Home-buttons {
+    top: auto;
+    bottom: 50%; }
+    #Home .Home-buttons.buttons-hide {
+      display: none; }
+  #Home .About-buttons {
+    top: 0em;
+    padding: 3em;
+    width: calc(100% - 6em); }
+    #Home .About-buttons button {
+      background: transparent;
+      color: #000;
+      border: 0px; }
+  #Home .Agenda-window {
+    position: absolute;
+    height: 40vh;
+    width: 40vw;
+    padding: 2em;
+    font-size: 1.2rem;
+    font-family: RobotoMono, sans-serif;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: #fff;
+    border: 2px solid #000; }
+
+@keyframes agendaPolygon {
+  from {
+    clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%); }
+  to {
+    clip-path: polygon(0% 100%, 0% 100%, 100% 100%, 100% 100%); } }
+#Work .page-header {
+  font-family: RobotoMono, sans-serif;
+  padding: 3rem 0em;
+  text-align: center; }
+  #Work .page-header h1 {
+    font-size: 1.2rem; }
+  #Work .page-header .section-link {
+    margin: 0 1em;
+    color: #ccc;
+    cursor: pointer; }
+    #Work .page-header .section-link:hover, #Work .page-header .section-link.active {
+      color: #000; }
+#Work .work-projects {
+  max-width: 60em;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap; }
+  #Work .work-projects.fadeIn {
+    animation: fadeIn 0.3s forwards; }
+  #Work .work-projects .work-project {
+    cursor: pointer;
+    position: relative;
+    flex: 0 0 48%;
+    margin: 1%;
+    background-size: cover;
+    background-position: 50%; }
+    #Work .work-projects .work-project:hover img.work-project__img {
+      filter: brightness(0.8); }
+    #Work .work-projects .work-project img.work-project__img {
+      transition: filter 0.2s ease-in-out;
+      filter: brightness(1);
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      pointer-events: none;
+      z-index: -1; }
+    #Work .work-projects .work-project .work-project__description {
+      padding: 6rem 0em;
+      text-align: center;
+      opacity: 0;
+      color: #fff;
+      font-family: RobotoMono, sans-serif;
+      transition: opacity 0.2s ease-in-out;
+      text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); }
+    #Work .work-projects .work-project:hover .work-project__description {
+      opacity: 1; }
+
+.SingleProject {
+  top: 0px;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+  visibility: hidden;
+  overflow: hidden; }
+  .SingleProject button {
+    font-size: 14px;
+    margin-bottom: 1.5em;
+    align-items: center;
+    cursor: pointer; }
+    .SingleProject button i {
+      margin-right: 0.4em; }
+  .SingleProject h1 {
+    margin: 0px; }
+  .SingleProject p {
+    margin: 0px; }
+  .SingleProject.toggled {
+    visibility: visible; }
+  .SingleProject .SingleProject-content {
+    flex: 0 0 40%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    font-family: RobotoMono, sans-serif;
+    background: #fff;
+    color: #000;
+    z-index: 2; }
+    .SingleProject .SingleProject-content h1, .SingleProject .SingleProject-content .SingleProject-paragraph, .SingleProject .SingleProject-content .SingleProject-objectives, .SingleProject .SingleProject-content .SingleProject-tech {
+      padding: 1rem 2rem; }
+    .SingleProject .SingleProject-content .SingleProject-paragraph {
+      line-height: 1.5;
+      letter-spacing: -1px; }
+  .SingleProject .SingleProject-image {
+    flex: 0 0 60%;
+    display: flex;
+    position: relative;
+    z-index: 1; }
+    .SingleProject .SingleProject-image .SingleProject-slider {
+      display: flex;
+      transition: transform 0.5s ease-in-out; }
+    .SingleProject .SingleProject-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; }
+    .SingleProject .SingleProject-image:hover .SingleProject-arrows {
+      opacity: 1; }
+    .SingleProject .SingleProject-image .ion {
+      transition: opacity 0.3s ease-in-out; }
+    .SingleProject .SingleProject-image .arrow-show {
+      opacity: 1;
+      pointer-events: all; }
+    .SingleProject .SingleProject-image .arrow-hide {
+      opacity: 0;
+      pointer-events: none; }
+  .SingleProject .SingleProject-arrows {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    position: absolute;
+    top: calc(50% - 0.5em);
+    font-size: 3rem;
+    flex: 0 0 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; }
+    .SingleProject .SingleProject-arrows i {
+      padding: 0.05em 0.25em;
+      color: #fff;
+      background: #000000;
+      margin: 0 0.25em;
+      font-size: 40px;
+      cursor: pointer; }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes glitch {
+  0% {
+    transform: translate(0); }
+  20% {
+    transform: translate(-5px, 5px); }
+  40% {
+    transform: translate(-5px, -5px); }
+  60% {
+    transform: translate(5px, 5px); }
+  80% {
+    transform: translate(5px, -5px); }
+  to {
+    transform: translate(0); } }
+.loadComponent-appear {
+  opacity: 0; }
+
+.loadComponent-appear.loadComponent-appear-active {
+  opacity: 1;
+  transition: all 0.4s linear; }
+
+.loadComponent-enter {
+  opacity: 0; }
+
+.loadComponent-enter.loadComponent-enter-active {
+  opacity: 1;
+  transition: all 0.4s linear; }
+
+.loadComponent-leave {
+  opacity: 1.0;
+  position: absolute;
+  transform: translateX(0vw); }
+
+.loadComponent-leave.loadComponent-leave-active {
+  opacity: 0;
+  transform: translateX(-100vw);
+  transition: all 0.4s ease-in-out;
+  position: absolute; }
+
+.SingleProject-appear {
+  opacity: 0;
+  transition: all 0.4s linear; }
+
+.SingleProject-appear.SingleProject-appear-active {
+  opacity: 1;
+  transition: all 0.4s linear; }
+
+.SingleProject-enter {
+  transition: all 0.4s ease-in-out; }
+
+.SingleProject-enter.SingleProject-enter-active {
+  transition: all 0.4s ease-in-out; }
+
+.SingleProject-leave {
+  transform: translateX(0vw);
+  position: absolute; }
+
+.SingleProject-leave.SingleProject-leave-active {
+  transform: translateX(100vw);
+  transition: all 0.4s ease-in-out;
+  position: absolute; }
+
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+  #Work .work-projects .work-project {
+    margin: 0;
+    flex: 0 0 50%; } }
+@media screen and (max-width: 600px) {
+  #Work .page-header {
+    margin-top: 5em; }
+
+  #Work .work-projects .work-project {
+    margin: 0;
+    flex: 0 0 100%; }
+    #Work .work-projects .work-project img.work-project__img {
+      filter: brightness(0.9); }
+    #Work .work-projects .work-project .work-project__description {
+      opacity: 1;
+      text-shadow: 0px 0px 30px black; }
+
+  .SingleProject {
+    flex-direction: column-reverse; }
+
+  .SingleProject .SingleProject-content {
+    align-content: flex-start;
+    overflow: scroll;
+    flex: 0 0 50%; }
+
+  .SingleProject .SingleProject-image {
+    flex: 0 0 50%; } }
+
+/*# sourceMappingURL=App.css.map */
