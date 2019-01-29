@@ -80,7 +80,7 @@ class Home extends React.Component {
   }
 
   handleSubmit(event) {
-    fetch('http://krawc.space/api/forms/submit/contact?token=e2949d4cfc3fb48cb1803670f3f61a', {
+    fetch('https://krawc.space/api/forms/submit/contact?token=e2949d4cfc3fb48cb1803670f3f61a', {
         method: 'post',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -121,15 +121,15 @@ class Home extends React.Component {
       </Menu>
         <div id="Home">
           <div className="Home-social">
-            <a target="_blank" href="https://github.com/@krawc"><i className="ion ion-social-github"></i></a>
-            <a target="_blank" href="https://github.com/@krawc"><i className="ion ion-social-twitter"></i></a>
-            <a target="_blank" href="https://github.com/@krawc"><i className="ion ion-social-linkedin"></i></a>
+            <a target="_blank" href="https://github.com/krawc"><i className="ion ion-social-github"></i></a>
+            <a target="_blank" href="https://twitter.com/konradkrawc"><i className="ion ion-social-twitter"></i></a>
+            <a target="_blank" href="https://www.linkedin.com/in/konradkrawc/"><i className="ion ion-social-linkedin"></i></a>
           </div>
           <Work videoEnded={this.state.videoEnded} changeActive={this.changeActive}/>
 
           {(!this.state.videoOpened && !(/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)))?
           <div className={"background " + (this.state.videoEnded ? "roll" : "")}>
-            <video ref={this.video} src={"http://krawc.space/" + this.state.videoURL} autoPlay muted onEnded={this.videoEnded}></video>
+            <video ref={this.video} src={"https://krawc.space/" + this.state.videoURL} autoPlay muted onEnded={this.videoEnded}></video>
             <button id="show-work" onClick={this.videoEnded}>SHOW WORK</button>
           </div>
           :
