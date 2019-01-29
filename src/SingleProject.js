@@ -26,7 +26,7 @@ class SingleProject extends React.Component {
     console.log(POSTID);
 
 
-    fetch('http://krawc.space/api/collections/get/work?token=e2949d4cfc3fb48cb1803670f3f61a', {
+    fetch('https://krawc.space/api/collections/get/work?token=e2949d4cfc3fb48cb1803670f3f61a', {
         method: 'post',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -88,7 +88,7 @@ class SingleProject extends React.Component {
 
     const images = this.state.project ? this.state.project.gallery.map((item, key) => {
       return (
-        <img src={'http://krawc.space/' + item.path}/>
+        <img src={'https://krawc.space/' + item.path}/>
       )
     })
     :

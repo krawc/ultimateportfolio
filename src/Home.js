@@ -27,7 +27,7 @@ class Home extends React.Component {
           messageSent: false
       }
 
-      fetch('http://krawc.space/api/singletons/get/vid?token=e2949d4cfc3fb48cb1803670f3f61a')
+      fetch('https://krawc.space/api/singletons/get/vid?token=e2949d4cfc3fb48cb1803670f3f61a')
           .then(collections => collections.json())
           // .then(collections => console.log(collections))
           .then(collections => this.setState({videoURL: collections.video}));

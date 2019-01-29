@@ -15,7 +15,7 @@ class Work extends React.Component {
       }
       this.switchActive = this.switchActive.bind(this);
 
-      fetch('http://krawc.space/api/collections/get/work?token=e2949d4cfc3fb48cb1803670f3f61a')
+      fetch('https://krawc.space/api/collections/get/work?token=e2949d4cfc3fb48cb1803670f3f61a')
           .then(collections => collections.json())
           .then(collections => this.setState({projects: collections.entries, activeProjects: collections.entries}));
 
