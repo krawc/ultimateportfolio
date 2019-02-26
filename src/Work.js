@@ -60,7 +60,7 @@ render() {
 
   return (
     this.state.isVisible ?
-    <div id="Work" className={this.props.videoEnded ? 'loaded' : ''}>
+    <div id="Work" className={this.props.videoEnded ? 'loaded' : 'loading'}>
       <header className="page-header">
         <h1>
           <a className={"section-link " + (this.state.activeSection === '' ? 'active' : '')} onClick={() => this.switchActive('')}>ALL</a>

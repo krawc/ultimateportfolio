@@ -109,7 +109,7 @@ class Home extends React.Component {
     transitionName={'loadComponent'}
 >
     {this.state.isVisible ?
-      <div id="outer-container">
+      <div id="outer-container" class={!this.state.videoOpened ? 'overflow-hidden' : ''}>
         <Menu pageWrapId={ "Home" } width={400} outerContainerId={ "outer-container" } customBurgerIcon={ <button>ABOUT ME</button> }>
           <h3>Hi! I'm Konrad.</h3>
           <p className="menu-item">I'm a web developer involved with interactive civic and social technology. About to graduate from NYU Shanghai, with a major in Interactive Media Arts and minor in Social Science, as well as 2 years of commercial experience in development and design. </p>
