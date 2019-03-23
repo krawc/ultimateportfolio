@@ -297,7 +297,6 @@ Note: Beware of modifying this element as it can break the animations - you shou
         filter: brightness(0.8);
       }
       img.work-project__img {
-        transition: filter 0.2s ease-in-out;
         filter: brightness(1);
         width: 100%;
         height: 100%;
@@ -317,7 +316,6 @@ Note: Beware of modifying this element as it can break the animations - you shou
         opacity: 0;
         color: #fff;
         font-family: RobotoMono, sans-serif;
-        transition: opacity 0.2s ease-in-out;
         text-shadow: 0px 0px 10px rgba(0,0,0,0.5);
       }
       &:hover .work-project__description{
@@ -381,10 +379,46 @@ Note: Beware of modifying this element as it can break the animations - you shou
       display: flex;
       transition: transform 0.5s ease-in-out;
     }
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    .bil-image {
+      flex: 0 0 100%;
+    }
+    .single-image {
+      flex: 0 0 100%;
+      position: relative;
+      img {
+        width: 100%;
+        height: 100%;
+        flex: 0 0 100%;
+        object-fit: cover;
+        position: relative;
+        filter: blur(10px);
+        transition: filter 0.3s ease-in-out;
+        & ~ i {
+          color: #fff;
+          text-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+          width: 50px;
+          height: 50px;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+          font-size: 40px;
+          justify-content: center;
+          display: flex;
+          align-items: center;
+          &:before {
+            animation: rotate 1s infinite;
+          }
+        }
+        &.lazy-image-show {
+          filter: blur(0);
+          & ~ i {
+            display: none;
+          }
+        }
+      }
     }
     &:hover .SingleProject-arrows {
       opacity: 1;
@@ -451,6 +485,11 @@ Note: Beware of modifying this element as it can break the animations - you shou
 	to {
 		transform: translate(0)
 	}
+}
+
+@keyframes rotate {
+  from {transform:rotate(0deg);}
+  to {transform:rotate(360deg);}
 }
 
 .loadComponent-appear {

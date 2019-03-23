@@ -238,7 +238,6 @@ Note: Beware of modifying this element as it can break the animations - you shou
     #Work .work-projects .work-project:hover img.work-project__img {
       filter: brightness(0.8); }
     #Work .work-projects .work-project img.work-project__img {
-      transition: filter 0.2s ease-in-out;
       filter: brightness(1);
       width: 100%;
       height: 100%;
@@ -257,7 +256,6 @@ Note: Beware of modifying this element as it can break the animations - you shou
       opacity: 0;
       color: #fff;
       font-family: RobotoMono, sans-serif;
-      transition: opacity 0.2s ease-in-out;
       text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); }
     #Work .work-projects .work-project:hover .work-project__description {
       opacity: 1; }
@@ -306,10 +304,40 @@ Note: Beware of modifying this element as it can break the animations - you shou
     .SingleProject .SingleProject-image .SingleProject-slider {
       display: flex;
       transition: transform 0.5s ease-in-out; }
-    .SingleProject .SingleProject-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover; }
+    .SingleProject .SingleProject-image .bil-image {
+      flex: 0 0 100%; }
+    .SingleProject .SingleProject-image .single-image {
+      flex: 0 0 100%;
+      position: relative; }
+      .SingleProject .SingleProject-image .single-image img {
+        width: 100%;
+        height: 100%;
+        flex: 0 0 100%;
+        object-fit: cover;
+        position: relative;
+        filter: blur(10px);
+        transition: filter 0.3s ease-in-out; }
+        .SingleProject .SingleProject-image .single-image img ~ i {
+          color: #fff;
+          text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+          width: 50px;
+          height: 50px;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+          font-size: 40px;
+          justify-content: center;
+          display: flex;
+          align-items: center; }
+          .SingleProject .SingleProject-image .single-image img ~ i:before {
+            animation: rotate 1s infinite; }
+        .SingleProject .SingleProject-image .single-image img.lazy-image-show {
+          filter: blur(0); }
+          .SingleProject .SingleProject-image .single-image img.lazy-image-show ~ i {
+            display: none; }
     .SingleProject .SingleProject-image:hover .SingleProject-arrows {
       opacity: 1; }
     .SingleProject .SingleProject-image .ion {
@@ -356,6 +384,11 @@ Note: Beware of modifying this element as it can break the animations - you shou
     transform: translate(5px, -5px); }
   to {
     transform: translate(0); } }
+@keyframes rotate {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
 .loadComponent-appear {
   opacity: 0; }
 

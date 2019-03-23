@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import Image from 'react-blur-lazy-image';
 
 class SingleProject extends React.Component {
 
@@ -88,7 +89,10 @@ class SingleProject extends React.Component {
 
     const images = this.state.project ? this.state.project.gallery.map((item, key) => {
       return (
-        <img src={'https://krawc.space/' + item.path}/>
+        <div className="single-image">
+          <Image src={'https://krawc.space/' + item.path} altSrc={'https://krawc.space/' + item.mini} />
+          <i className="ion ion-load-d"></i>
+        </div>
       )
     })
     :
