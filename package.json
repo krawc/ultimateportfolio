@@ -8,6 +8,7 @@
     "react-addons-css-transition-group": "^15.6.2",
     "react-blur-image-loader": "^0.2.2",
     "react-blur-lazy-image": "^1.1.3",
+    "react-blur-lazy-image-noscroll": "^1.1.4",
     "react-burger-menu": "^2.6.1",
     "react-component-gallery": "^1.2.1",
     "react-dom": "^16.5.2",

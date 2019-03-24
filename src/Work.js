@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import SingleProject from './SingleProject.js';
+import Image from 'react-blur-lazy-image';
+
 
 class Work extends React.Component {
   constructor(props){

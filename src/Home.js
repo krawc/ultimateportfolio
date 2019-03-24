@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import Work from './Work.js';
-import { push as Menu } from 'react-burger-menu'
+import { push as Menu } from 'react-burger-menu';
+import Image from 'react-blur-lazy-image';
 
 
 class Home extends React.Component {
