@@ -3,20 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "query-string": "^6.2.0",
-    "react": "^16.5.2",
+    "query-string": "^6.4.0",
+    "react": "^16.8.5",
     "react-addons-css-transition-group": "^15.6.2",
     "react-blur-image-loader": "^0.2.2",
     "react-blur-lazy-image": "^1.1.3",
-    "react-blur-lazy-image-noscroll": "^1.1.4",
-    "react-burger-menu": "^2.6.1",
+    "react-blur-lazy-image-noscroll": "^1.1.52",
+    "react-burger-menu": "^2.6.5",
     "react-component-gallery": "^1.2.1",
-    "react-dom": "^16.5.2",
+    "react-dom": "^16.8.5",
     "react-image-grid": "^0.3.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.0.4",
     "react-simple-grid": "^1.1.2",
-    "swipe-js-iso": "^2.1.4"
+    "swipe-js-iso": "^2.1.5"
   },
   "scripts": {
     "start": "react-scripts start",
