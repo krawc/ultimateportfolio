@@ -6,12 +6,9 @@ import Work from './Work.js';
 import { push as Menu } from 'react-burger-menu';
 import Image from 'react-blur-lazy-image';
 
-
 class Home extends React.Component {
   constructor(props){
     super(props);
-
-
 
     this.openAgenda = this.openAgenda.bind(this);
     this.videoEnded = this.videoEnded.bind(this);
