@@ -9,7 +9,8 @@
 a {
   font-family: RobotoMono, sans-serif;
   color: #000;
-  text-decoration: none; }
+  text-decoration: none;
+font-weight: 800; }
 
 button {
   font-size: 1rem;
@@ -20,6 +21,7 @@ button {
   position: relative;
   display: flex;
   padding: 5px 8px;
+  background: #fff;
   border: 2px solid #000; }
   button:hover {
     background: #000;
@@ -146,7 +148,6 @@ Note: Beware of modifying this element as it can break the animations - you shou
 #Home {
   box-sizing: border-box;
   width: 100vw;
-  height: 100vh;
   overflow-x: hidden;
   position: relative;
   font-family: RobotoMono, sans-serif; }
@@ -303,7 +304,8 @@ Note: Beware of modifying this element as it can break the animations - you shou
     z-index: 1; }
     .SingleProject .SingleProject-image .SingleProject-slider {
       display: flex;
-      transition: transform 0.5s ease-in-out; }
+      transition: transform 0.5s ease-in-out;
+      width: 100%; }
     .SingleProject .SingleProject-image .bil-image {
       flex: 0 0 100%; }
     .SingleProject .SingleProject-image .single-image {

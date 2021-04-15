@@ -17,9 +17,13 @@ class Work extends React.Component {
       }
       this.switchActive = this.switchActive.bind(this);
 
-      fetch('https://krawc.space/api/collections/get/work?token=e2949d4cfc3fb48cb1803670f3f61a')
+      fetch('http://104.236.198.13/projects', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        }})
           .then(collections => collections.json())
-          .then(collections => this.setState({projects: collections.entries, activeProjects: collections.entries}));
+          .then((collections) => { this.setState({projects: collections, activeProjects: collections}); console.log(collections)});
 
       this.closeComponent = ev => {
           ev.preventDefault();
@@ -33,7 +37,7 @@ class Work extends React.Component {
 switchActive(key) {
   const projects = this.state.projects;
   if ((projects !== []) && (key !== '')) {
-    const newActive = projects.filter(project => project.category.includes(key));
+    const newActive = projects.filter(project => project.type.includes(key));
     // console.log(newActive);
     this.setState({
       activeProjects: newActive,
@@ -52,8 +56,8 @@ render() {
   const projects = this.state.activeProjects.map((item, key) => {
 
     return (
-      <article className="work-project" onClick={() => this.props.changeActive(item._id)}>
-        <img className="work-project__img" src={'http://krawc.space/' + item.image.path}/>
+      <article className="work-project" onClick={() => this.props.changeActive(item.id)}>
+        <img className="work-project__img" src={'http://104.236.198.13' + item.thumbnail.url}/>
         <div className="work-project__description"><h1>{item.title}</h1></div>
       </article>
     )
@@ -66,9 +70,9 @@ render() {
       <header className="page-header">
         <h1>
           <a className={"section-link " + (this.state.activeSection === '' ? 'active' : '')} onClick={() => this.switchActive('')}>ALL</a>
-          <a className={"section-link " + (this.state.activeSection === 'web' ? 'active' : '')} onClick={() => this.switchActive('web')}>WEB</a>
-          <a className={"section-link " + (this.state.activeSection === 'design' ? 'active' : '')} onClick={() => this.switchActive('design')}>DESIGN</a>
+          <a className={"section-link " + (this.state.activeSection === 'work' ? 'active' : '')} onClick={() => this.switchActive('work')}>WORK</a>
           <a className={"section-link " + (this.state.activeSection === 'play' ? 'active' : '')} onClick={() => this.switchActive('play')}>PLAY</a>
+          <a className="section-link" target="_blank" href="https://medium.com/@krawc" >WRITING</a>
         </h1>
       </header>
       <main className={"work-projects"}>

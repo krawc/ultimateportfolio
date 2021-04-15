@@ -113,7 +113,8 @@ class Home extends React.Component {
       <div id="outer-container">
         <Menu pageWrapId={ "Home" } width={400} outerContainerId={ "outer-container" } customBurgerIcon={ <button>ABOUT ME</button> }>
           <h3>Hi! I'm Konrad.</h3>
-          <p className="menu-item">I'm a web developer involved with interactive civic and social technology. About to graduate from NYU Shanghai, with a major in Interactive Media Arts and minor in Social Science, as well as 2 years of commercial experience in development and design. </p>
+          <p className="menu-item">I'm an interaction designer. <br/>I experiment with combining technological layers to help creatives "in these uncertain times", and to tell stories of the future anti/social change.</p>
+          <p>Graduated from NYU Shanghai's IMA program in 2019. Currently stationed in Berlin.</p>
           <h3>Wanna work together?<br/>Send me a message:</h3>
             <form onSubmit={this.handleSubmit}>
               <textarea name="message" onChange={this.handleChange} id="message">{this.state.message}</textarea>
@@ -128,14 +129,14 @@ class Home extends React.Component {
           </div>
           <Work videoEnded={this.state.videoEnded} changeActive={this.changeActive}/>
 
-          {(!this.state.videoOpened && !(/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)))?
+          {/* {(!this.state.videoOpened && !(/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)))?
           <div className={"background " + (this.state.videoEnded ? "roll" : "")}>
             <video ref={this.video} src={"https://krawc.space/" + this.state.videoURL} autoPlay muted onEnded={this.videoEnded}></video>
             <button id="show-work" onClick={this.videoEnded}>SHOW WORK</button>
           </div>
           :
           <div/>
-          }
+          } */}
         </div>
       </div>
       :

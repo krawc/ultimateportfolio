@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import Image from 'react-blur-lazy-image-noscroll';
+import { Remarkable } from 'remarkable';
+
 
 class SingleProject extends React.Component {
 
@@ -28,17 +30,14 @@ class SingleProject extends React.Component {
     console.log(POSTID);
 
 
-    fetch('https://krawc.space/api/collections/get/work?token=e2949d4cfc3fb48cb1803670f3f61a', {
-        method: 'post',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            filter: {_id: POSTID}
-        })
+    fetch('http://104.236.198.13/projects/' + POSTID, {
+        method: 'get',
+        headers: { 'Content-Type': 'application/json' }
       })
         .then(collections => collections.json())
-        .then(collections => this.setState({project: collections.entries[0]}))
+        .then((collections) => {this.setState({project: collections}); console.log(collections);})
         .then(collections => this.setState({loaded: true}))
-        .then(collections => this.setState({galleryLength: this.state.project.gallery.length}));
+        .then(collections => this.setState({galleryLength: this.state.project.images.length}));
 
 
     this.backToWork = ev => {
@@ -64,7 +63,7 @@ class SingleProject extends React.Component {
 
   slideBack(e) {
     let slide = this.state.currentSlide;
-    let photos = this.state.project.gallery;
+    let photos = this.state.project.images;
     let nextSlide = (slide - 1) % photos.length;
     if (nextSlide < 0) {
       nextSlide += photos.length;
@@ -76,7 +75,7 @@ class SingleProject extends React.Component {
 
   slideForward(e) {
     let slide = Math.abs(this.state.currentSlide);
-    let photos = this.state.project.gallery;
+    let photos = this.state.project.images;
     let nextSlide = (slide + 1) % photos.length;
     this.setState({
       currentSlide: nextSlide
@@ -92,12 +91,14 @@ class SingleProject extends React.Component {
 
   render() {
 
-    console.log( this.state.project.gallery)
+    var md = new Remarkable();
 
-    const images = this.state.project ? this.state.project.gallery.map((item, key) => {
+
+
+    const images = this.state.project ? this.state.project.images.map((item, key) => {
       return (
         <div className="single-image">
-          <Image container={this.imageContainer1} src={'https://krawc.space/' + item.path} altSrc={'https://krawc.space/' + item.mini} />
+          <Image container={this.imageContainer1} src={'http://104.236.198.13' + item.url} altSrc={'http://104.236.198.13' + item.formats.thumbnail.url} />
           <i className="ion ion-load-d"></i>
         </div>
       )
@@ -120,7 +121,7 @@ class SingleProject extends React.Component {
       <div className={"SingleProject " + (this.state.loaded ? 'toggled' : 'untoggled')}>
         <div className="SingleProject-content">
           <h1><button className="Home-buttons" onClick={this.backToWork}><i className="ion ion-chevron-left"></i>{" BACK"}</button><a target="_blank" href={this.state.project.link}>{this.state.project.title}</a></h1>
-          <div className="SingleProject-paragraph" dangerouslySetInnerHTML={{__html: this.state.project.content}} />
+          <div className="SingleProject-paragraph" dangerouslySetInnerHTML={{__html: md.render(this.state.project.description)}} />
         </div>
           <div className="SingleProject-image">
             <div className="SingleProject-slider" unmountonexit ref={(node) => { this.imageContainer1 = node; }} style={{transform: 'translateX(-' + (this.state.currentSlide * 100) + '%)'}}>
