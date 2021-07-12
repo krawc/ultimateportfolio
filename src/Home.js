@@ -5,6 +5,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import Work from './Work.js';
 import { push as Menu } from 'react-burger-menu';
 import Image from 'react-blur-lazy-image';
+import { send } from 'emailjs-com';
 
 
 class Home extends React.Component {
@@ -17,7 +18,7 @@ class Home extends React.Component {
     this.videoEnded = this.videoEnded.bind(this);
     this.changeActive = this.changeActive.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
 
       this.state = {
           isVisible: true,
@@ -25,7 +26,13 @@ class Home extends React.Component {
           videoEnded: false,
           videoOpened: sessionStorage.getItem('opened'),
           message: '',
-          messageSent: false
+          messageSent: false,
+          toSend: {
+            from_name: 'Visitor',
+            to_name: 'Konrad',
+            message: '',
+            reply_to: '',
+          }
       }
 
       fetch('https://krawc.space/api/singletons/get/vid?token=e2949d4cfc3fb48cb1803670f3f61a')
@@ -76,28 +83,34 @@ class Home extends React.Component {
     });
   }
 
-  handleChange(event) {
-    this.setState({message: event.target.value});
+  onSubmit = (e) => {
+    e.preventDefault();
+    this.setState({
+      messageSending: true
+    });
+    send(
+      'service_scljtpn',
+      'template_0raz3nj',
+      this.state.toSend,
+      'user_Vq4Il6NwpgjuD9VVj5fc1'
+    )
+      .then((response) => {
+        console.log('SUCCESS!', response.status, response.text);
+      })
+      .then(this.setState({
+        messageSent: true,
+        messageSending: false
+      }))
+      .catch((err) => {
+        console.log('FAILED...', err);
+        this.setState({
+          messageSending: false
+        });
+      });
   }
 
-  handleSubmit(event) {
-    fetch('https://krawc.space/api/forms/submit/contact?token=e2949d4cfc3fb48cb1803670f3f61a', {
-        method: 'post',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            form: {
-                message: this.state.message,
-            }
-        })
-    })
-    .then(entry => entry.json())
-    .then(entry => console.log(entry))
-    .then(this.setState({
-      messageSent: true
-    }));
-
-    event.preventDefault();
-
+  handleChange = (e) => {
+    this.setState({toSend: { ...this.state.toSend, [e.target.name]: e.target.value }});
   }
 
   render() {
@@ -113,12 +126,19 @@ class Home extends React.Component {
       <div id="outer-container">
         <Menu pageWrapId={ "Home" } width={400} outerContainerId={ "outer-container" } customBurgerIcon={ <button>ABOUT ME</button> }>
           <h3>Hi! I'm Konrad.</h3>
-          <p className="menu-item">I'm an interaction designer. <br/>I experiment with combining technological layers to help creatives "in these uncertain times", and to tell stories of the future anti/social change.</p>
-          <p>Graduated from NYU Shanghai's IMA program in 2019. Currently stationed in Berlin.</p>
+          <p className="menu-item">I experiment with combining technological layers to provide tools for creative production, and to tell stories of the future anti/social change.</p>
+          <p>Graduated from NYU Shanghai's IMA program in 2019. Currently parked in Berlin.</p>
           <h3>Wanna work together?<br/>Send me a message:</h3>
-            <form onSubmit={this.handleSubmit}>
-              <textarea name="message" onChange={this.handleChange} id="message">{this.state.message}</textarea>
-              <button type="submit" value="Submit">{this.state.messageSent ? 'SENT!' : 'SEND'}</button>
+            <form onSubmit={this.onSubmit}>
+              <input
+                type='text'
+                name='reply_to'
+                placeholder='Your email'
+                value={this.state.toSend.reply_to}
+                onChange={this.handleChange}
+              />
+                <textarea name="message" onChange={this.handleChange} id="message">{this.state.toSend.message}</textarea>
+              <button type="submit" value="Submit">{this.state.messageSent ? 'SENT!' : (this.state.messageSending ? 'PROCESSING...' : 'SEND')}</button>
             </form>
       </Menu>
         <div id="Home" class={!this.state.videoOpened ? 'overflow-hidden' : ''}>

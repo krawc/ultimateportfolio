@@ -82,6 +82,18 @@ Note: Beware of modifying this element as it can break the animations - you shou
   .bm-item-list p {
     letter-spacing: -1px; }
 
+input {
+  width: 100%;
+  font-size: 1rem;
+  margin-bottom: 0.5em;
+  background: transparent;
+  border: 2px solid #fff;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: RobotoMono, monospace;
+  padding: 0.5em;
+}
+
 #message {
   width: 100%;
   font-size: 1rem;
