@@ -30,7 +30,7 @@ class SingleProject extends React.Component {
     console.log(POSTID);
 
 
-    fetch('http://104.236.198.13/projects/' + POSTID, {
+    fetch('https://kon.red/projects/' + POSTID, {
         method: 'get',
         headers: { 'Content-Type': 'application/json' }
       })
@@ -98,7 +98,7 @@ class SingleProject extends React.Component {
     const images = this.state.project ? this.state.project.images.map((item, key) => {
       return (
         <div className="single-image">
-          <Image container={this.imageContainer1} src={'http://104.236.198.13' + item.url} altSrc={'http://104.236.198.13' + item.formats.thumbnail.url} />
+          <Image container={this.imageContainer1} src={'https://kon.red' + item.url} altSrc={'https://kon.red' + item.formats.thumbnail.url} />
           <i className="ion ion-load-d"></i>
         </div>
       )
