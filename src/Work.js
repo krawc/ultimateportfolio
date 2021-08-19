@@ -17,7 +17,7 @@ class Work extends React.Component {
       }
       this.switchActive = this.switchActive.bind(this);
 
-      fetch('http://104.236.198.13/projects', {
+      fetch('https://kon.red/projects', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -57,7 +57,7 @@ render() {
 
     return (
       <article className="work-project" onClick={() => this.props.changeActive(item.id)}>
-        <img className="work-project__img" src={'http://104.236.198.13' + item.thumbnail.url}/>
+        <img className="work-project__img" src={'https://kon.red' + item.thumbnail.url}/>
         <div className="work-project__description"><h1>{item.title}</h1></div>
       </article>
     )
