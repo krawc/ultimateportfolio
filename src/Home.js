@@ -35,11 +35,6 @@ class Home extends React.Component {
           }
       }
 
-      fetch('https://krawc.space/api/singletons/get/vid?token=e2949d4cfc3fb48cb1803670f3f61a')
-          .then(collections => collections.json())
-          // .then(collections => console.log(collections))
-          .then(collections => this.setState({videoURL: collections.video}));
-
       this.video = React.createRef();
 
       this.closeComponent = ev => {
@@ -151,7 +146,6 @@ class Home extends React.Component {
 
           {/* {(!this.state.videoOpened && !(/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)))?
           <div className={"background " + (this.state.videoEnded ? "roll" : "")}>
-            <video ref={this.video} src={"https://krawc.space/" + this.state.videoURL} autoPlay muted onEnded={this.videoEnded}></video>
             <button id="show-work" onClick={this.videoEnded}>SHOW WORK</button>
           </div>
           :
