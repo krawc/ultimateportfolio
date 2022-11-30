@@ -121,8 +121,8 @@ class Home extends React.Component {
       <div id="outer-container">
         <Menu pageWrapId={ "Home" } width={400} outerContainerId={ "outer-container" } customBurgerIcon={ <button>ABOUT ME</button> }>
           <h3>Hi! I'm Konrad.</h3>
-          <p className="menu-item">I experiment with combining technological layers to provide tools for creative production, and to tell stories of the future anti/social change.</p>
-          <p>Graduated from NYU Shanghai's IMA program in 2019. Currently parked in Berlin.</p>
+          <p className="menu-item">I experiment with combining technological layers to provide tools for creative production, and to tell stories of the future social change.</p>
+          <p>Graduated from NYU Shanghai's IMA program in 2019. Currently parked in Delft.</p>
           <h3>Wanna work together?<br/>Send me a message:</h3>
             <form onSubmit={this.onSubmit}>
               <input
