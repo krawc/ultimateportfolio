@@ -30,7 +30,7 @@ class SingleProject extends React.Component {
     console.log(POSTID);
 
 
-    fetch('https://kon.red/projects/' + POSTID, {
+    fetch('https://strapi-cx4y.onrender.com/projects/' + POSTID, {
         method: 'get',
         headers: { 'Content-Type': 'application/json' }
       })
