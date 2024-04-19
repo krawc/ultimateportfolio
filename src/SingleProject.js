@@ -35,7 +35,7 @@ class SingleProject extends React.Component {
         headers: { 'Content-Type': 'application/json' }
       })
         .then(collections => collections.json())
-        .then((collections) => {this.setState({project: collections}); console.log(collections);})
+        .then((collections) => {this.setState({project: collections.data}); console.log(collections.data);})
         .then(collections => this.setState({loaded: true}))
         .then(collections => this.setState({galleryLength: this.state.project.images.length}));
 
@@ -120,8 +120,8 @@ class SingleProject extends React.Component {
     {this.state.isVisible ?
       <div className={"SingleProject " + (this.state.loaded ? 'toggled' : 'untoggled')}>
         <div className="SingleProject-content">
-          <h1><button className="Home-buttons" onClick={this.backToWork}><i className="ion ion-chevron-left"></i>{" BACK"}</button><a target="_blank" href={this.state.project.link}>{this.state.project.title}</a></h1>
-          <div className="SingleProject-paragraph" dangerouslySetInnerHTML={{__html: md.render(this.state.project.description)}} />
+          <h1><button className="Home-buttons" onClick={this.backToWork}><i className="ion ion-chevron-left"></i>{" BACK"}</button><a target="_blank" href={this.state.project.attributes.link}>{this.state.project.attributes.title}</a></h1>
+          <div className="SingleProject-paragraph" dangerouslySetInnerHTML={{__html: md.render(this.state.project.attributes.description)}} />
         </div>
           <div className="SingleProject-image">
             <div className="SingleProject-slider" unmountonexit ref={(node) => { this.imageContainer1 = node; }} style={{transform: 'translateX(-' + (this.state.currentSlide * 100) + '%)'}}>

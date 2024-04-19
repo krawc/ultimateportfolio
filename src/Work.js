@@ -23,7 +23,7 @@ class Work extends React.Component {
           'Content-Type': 'application/json',
         }})
           .then(collections => collections.json())
-          .then((collections) => { this.setState({projects: collections, activeProjects: collections}); console.log(collections)});
+          .then((collections) => { this.setState({projects: collections.data, activeProjects: collections.data}); console.log(collections)});
 
       this.closeComponent = ev => {
           ev.preventDefault();
@@ -37,7 +37,7 @@ class Work extends React.Component {
 switchActive(key) {
   const projects = this.state.projects;
   if ((projects !== []) && (key !== '')) {
-    const newActive = projects.filter(project => project.type.includes(key));
+    const newActive = projects.filter(project => project.attributes.type.includes(key));
     // console.log(newActive);
     this.setState({
       activeProjects: newActive,
@@ -57,7 +57,7 @@ render() {
 
     return (
       <article className="work-project" onClick={() => this.props.changeActive(item.id)}>
-        <img className="work-project__img" src={'https://kon.red' + item.thumbnail.url}/>
+        <img className="work-project__img" src={'https://strapi-cx4y.onrender.com/api/' + item.thumbnail.url}/>
         <div className="work-project__description"><h1>{item.title}</h1></div>
       </article>
     )
