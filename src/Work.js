@@ -17,7 +17,7 @@ class Work extends React.Component {
       }
       this.switchActive = this.switchActive.bind(this);
 
-      fetch('https://kon.red/projects', {
+      fetch('https://strapi-cx4y.onrender.com/projects', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
