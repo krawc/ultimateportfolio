@@ -108,7 +108,7 @@ class SingleProject extends React.Component {
     const images = this.state.project ? this.state.project.attributes.images.data.map((item, key) => {
       return (
         <div className="single-image">
-          <Image container={this.imageContainer1} src={'https://strapi-cx4y.onrender.com/api/' + item.attributes.url} altSrc={'https://strapi-cx4y.onrender.com/api/' + item.attributes.formats.thumbnail.url} />
+          <Image container={this.imageContainer1} src={'https://strapi-cx4y.onrender.com' + item.attributes.url} altSrc={'https://strapi-cx4y.onrender.com' + item.attributes.formats.thumbnail.url} />
           <i className="ion ion-load-d"></i>
         </div>
       )
