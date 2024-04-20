@@ -120,7 +120,7 @@ class SingleProject extends React.Component {
     {this.state.isVisible ?
       <div className={"SingleProject " + (this.state.loaded ? 'toggled' : 'untoggled')}>
         <div className="SingleProject-content">
-          <h1><button className="Home-buttons" onClick={this.backToWork}><i className="ion ion-chevron-left"></i>{" BACK"}</button><a target="_blank" href={this.state.project.attributes.link}>{this.state.project.attributes.title}</a></h1>
+          <h1><button className="Home-buttons" onClick={this.backToWork}><i className="ion ion-chevron-left"></i>{" BACK"}</button><a target="_blank" href={this.state.project.id}>{this.state.project.attributes.title}</a></h1>
           <div className="SingleProject-paragraph" dangerouslySetInnerHTML={{__html: md.render(this.state.project.attributes.description)}} />
         </div>
           <div className="SingleProject-image">

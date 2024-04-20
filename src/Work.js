@@ -57,7 +57,7 @@ render() {
 
     return (
       <article className="work-project" onClick={() => this.props.changeActive(item.id)}>
-        <img className="work-project__img" src={'https://strapi-cx4y.onrender.com/api/' + item.attributes.thumbnail.data.attributes.url}/>
+        <img className="work-project__img" src={'https://strapi-cx4y.onrender.com' + item.attributes.thumbnail.data.attributes.url}/>
         <div className="work-project__description"><h1>{item.attributes.title}</h1></div>
       </article>
     )
