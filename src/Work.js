@@ -17,7 +17,7 @@ class Work extends React.Component {
       }
       this.switchActive = this.switchActive.bind(this);
 
-      fetch('https://strapi-cx4y.onrender.com/api/projects', {
+      fetch('https://strapi-cx4y.onrender.com/api/projects?populate=*', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -57,8 +57,8 @@ render() {
 
     return (
       <article className="work-project" onClick={() => this.props.changeActive(item.id)}>
-        <img className="work-project__img" src={'https://strapi-cx4y.onrender.com/api/' + item.thumbnail.url}/>
-        <div className="work-project__description"><h1>{item.title}</h1></div>
+        <img className="work-project__img" src={'https://strapi-cx4y.onrender.com/api/' + item.attributes.thumbnail.data.attributes.url}/>
+        <div className="work-project__description"><h1>{item.attributes.title}</h1></div>
       </article>
     )
   });

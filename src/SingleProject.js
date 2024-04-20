@@ -30,14 +30,14 @@ class SingleProject extends React.Component {
     console.log(POSTID);
 
 
-    fetch('https://strapi-cx4y.onrender.com/api/projects/' + POSTID, {
+    fetch('https://strapi-cx4y.onrender.com/api/projects/' + POSTID + '?populate=*', {
         method: 'get',
         headers: { 'Content-Type': 'application/json' }
       })
         .then(collections => collections.json())
         .then((collections) => {this.setState({project: collections.data}); console.log(collections.data);})
         .then(collections => this.setState({loaded: true}))
-        .then(collections => this.setState({galleryLength: this.state.project.images.length}));
+        .then(collections => this.setState({galleryLength: this.state.project.attributes.images.length}));
 
 
     this.backToWork = ev => {
@@ -63,7 +63,7 @@ class SingleProject extends React.Component {
 
   slideBack(e) {
     let slide = this.state.currentSlide;
-    let photos = this.state.project.images;
+    let photos = this.state.project.attributes.images;
     let nextSlide = (slide - 1) % photos.length;
     if (nextSlide < 0) {
       nextSlide += photos.length;
@@ -75,7 +75,7 @@ class SingleProject extends React.Component {
 
   slideForward(e) {
     let slide = Math.abs(this.state.currentSlide);
-    let photos = this.state.project.images;
+    let photos = this.state.project.attributes.images;
     let nextSlide = (slide + 1) % photos.length;
     this.setState({
       currentSlide: nextSlide
@@ -95,10 +95,10 @@ class SingleProject extends React.Component {
 
 
 
-    const images = this.state.project ? this.state.project.images.map((item, key) => {
+    const images = this.state.project ? this.state.project.attributes.images.map((item, key) => {
       return (
         <div className="single-image">
-          <Image container={this.imageContainer1} src={'https://strapi-cx4y.onrender.com/api/' + item.url} altSrc={'https://strapi-cx4y.onrender.com/api/' + item.formats.thumbnail.url} />
+          <Image container={this.imageContainer1} src={'https://strapi-cx4y.onrender.com/api/' + item.attributes.url} altSrc={'https://strapi-cx4y.onrender.com/api/' + item.attributes.formats.thumbnail.url} />
           <i className="ion ion-load-d"></i>
         </div>
       )
