@@ -10,6 +10,18 @@ import ProjectsContext from './ProjectsContext';
 
 
 const projectsRaw = [
+
+  {
+    "id": 1,
+    "title": "BMW AG",
+    "description": "During my internship at BMW’s in-car voice assistant team,  I supported the integration of large language models into automotive UX. My work helped define the assistant’s interaction style by contributing to the development of a fine-tuning dataset and prompt design. A feedback platform I co-developed enabled compliant, large-scale collection of user preferences around verbosity. Insights from user studies shaped key design decisions and contributed directly to team-wide strategy updates. I also helped improve onboarding UX in the demo app, making the assistant easier to showcase to internal and external stakeholders. CASE STUDY: <a href='https://www.figma.com/deck/444PWwPIrL52rwRWtWgrnO/LLM-Human-Feedback-Strategy---case-study?node-id=1-352&t=DCnpHFrQDmpE0Whq-1'>LLM HUMAN FEEDBACK</a>",
+    "type": "work",
+    "year": "2025",
+    "images": [
+      "https://www.dropbox.com/scl/fi/3brilbdwe0oipe1z8bkio/bmw1.png?rlkey=e6549e6fc0zo2n49wjr83dkui&st=jmyai39z&raw=1",
+      "https://www.dropbox.com/scl/fi/hdy9a9elfmeves7sz0s1c/bmw2.png?rlkey=jewl441r7glxv6nmrph2qcfm0&st=68aev8dl&raw=1"
+    ]
+  },
   {
     "id": 10,
     "title": "Visio Voice",
@@ -22,7 +34,7 @@ const projectsRaw = [
     ]
   },
   {
-    "id": 1,
+    "id": 12,
     "title": "eureka",
     "description": "Spring 2024. Vision in Product Project at TU Delft. This project explores innovative approaches to international train travel by addressing current preconceptions and leveraging modern lifestyle shifts. Central to the project is a travel planning tool designed to enhance the quality of door-to-door travel. This tool provides users with a quality-oriented view of their journey, highlighting not just logistics but also cognitive aspects of their travel time. By visualizing occupied, idle, and free time, and incorporating information on amenities and multimodal connections, the tool encourages process-oriented choices, nudging users toward sustainable ground transit options.",
     "type": "play",
