@@ -14,7 +14,7 @@ const projectsRaw = [
   {
     "id": 1,
     "title": "BMW AG",
-    "description": "During my internship at BMW’s in-car voice assistant team,  I supported the integration of large language models into automotive UX. My work helped define the assistant’s interaction style by contributing to the development of a fine-tuning dataset and prompt design. A feedback platform I co-developed enabled compliant, large-scale collection of user preferences around verbosity. Insights from user studies shaped key design decisions and contributed directly to team-wide strategy updates. I also helped improve onboarding UX in the demo app, making the assistant easier to showcase to internal and external stakeholders. CASE STUDY: <a href='https://www.figma.com/deck/444PWwPIrL52rwRWtWgrnO/LLM-Human-Feedback-Strategy---case-study?node-id=1-352&t=DCnpHFrQDmpE0Whq-1'>LLM HUMAN FEEDBACK</a>",
+    "description": "During my internship at BMW's in-car voice assistant team, I supported the integration of large language models into automotive UX. My work helped define the assistant's interaction style by contributing to the development of a fine-tuning dataset and prompt design. A feedback platform I co-developed enabled compliant, large-scale collection of user preferences around verbosity. Insights from user studies shaped key design decisions and contributed directly to team-wide strategy updates. I also helped improve onboarding UX in the demo app, making the assistant easier to showcase to internal and external stakeholders. CASE STUDY: <a href='https://www.figma.com/deck/444PWwPIrL52rwRWtWgrnO/LLM-Human-Feedback-Strategy---case-study?node-id=1-352&t=DCnpHFrQDmpE0Whq-1'>LLM HUMAN FEEDBACK</a>",
     "type": "work",
     "year": "2025",
     "images": [
