@@ -22,17 +22,17 @@ const projectsRaw = [
       "https://www.dropbox.com/scl/fi/hdy9a9elfmeves7sz0s1c/bmw2.png?rlkey=jewl441r7glxv6nmrph2qcfm0&st=68aev8dl&raw=1"
     ]
   },
-  {
-    "id": 10,
-    "title": "Visio Voice",
-    "description": "Summer 2024. Thesis Project at TU Delft. This research project investigates the challenges faced by blind and low-vision (BLV) individuals in using digital technologies, particularly focusing on the usability and accessibility of voice assistant technologies. The study aims to identify key problems experienced by BLV users, analyze the limitations and recent developments in voice assistant technology, and co-create a solution aimed at enhancing the usability of voice assistants for non-visual users. To achieve these objectives, a mixed-methods approach was employed, including a literature review, usability inspections, digital anthropology, as well as co-design sessions with Visio experts and prototype testing with BLV users to validate potential solutions.",
-    "type": "work",
-    "year": "2024",
-    "images": [
-      "https://www.dropbox.com/scl/fi/f3aizunpigjqimkvhtoe7/thesis0.png?rlkey=ssmx19cqn8u41z8ep1o2htpk4&st=8vx0ywtb&raw=1",
-      "https://www.dropbox.com/scl/fi/fnrc87kfu8xba73gewuo9/thesis1.png?rlkey=hvhkaj1kf5xvtz6yu2vqrkdtq&st=2t9d578y&raw=1"
-    ]
-  },
+  // {
+  //   "id": 10,
+  //   "title": "Visio Voice",
+  //   "description": "Summer 2024. Thesis Project at TU Delft. This research project investigates the challenges faced by blind and low-vision (BLV) individuals in using digital technologies, particularly focusing on the usability and accessibility of voice assistant technologies. The study aims to identify key problems experienced by BLV users, analyze the limitations and recent developments in voice assistant technology, and co-create a solution aimed at enhancing the usability of voice assistants for non-visual users. To achieve these objectives, a mixed-methods approach was employed, including a literature review, usability inspections, digital anthropology, as well as co-design sessions with Visio experts and prototype testing with BLV users to validate potential solutions.",
+  //   "type": "work",
+  //   "year": "2024",
+  //   "images": [
+  //     "https://www.dropbox.com/scl/fi/f3aizunpigjqimkvhtoe7/thesis0.png?rlkey=ssmx19cqn8u41z8ep1o2htpk4&st=8vx0ywtb&raw=1",
+  //     "https://www.dropbox.com/scl/fi/fnrc87kfu8xba73gewuo9/thesis1.png?rlkey=hvhkaj1kf5xvtz6yu2vqrkdtq&st=2t9d578y&raw=1"
+  //   ]
+  // },
   {
     "id": 12,
     "title": "eureka",
