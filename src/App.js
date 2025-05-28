@@ -26,7 +26,7 @@ const projectsRaw = [
       {
         "title": "HUMAN FEEDBACK & ANSWER LENGTH",
         "btnText": "VIEW CASE STUDY",
-        "url": "https://www.figma.com/proto/iJS5uppZ4LN6aYKB1cheev/Chat-BMW-island?page-id=10%3A16&node-id=13-1621&starting-point-node-id=13%3A1621&scaling=scale-down-width&content-scaling=fixed&show-proto-sidebar=1&t=ABtnzJ6NtxqnHdXt-1",
+        "url": "https://www.figma.com/slides/444PWwPIrL52rwRWtWgrnO/LLM-Human-Feedback-Strategy---case-study?node-id=1-352&t=DCnpHFrQDmpE0Whq-1",
         "img": "https://www.dropbox.com/scl/fi/hdy9a9elfmeves7sz0s1c/bmw2.png?rlkey=jewl441r7glxv6nmrph2qcfm0&st=68aev8dl&raw=1"
       }
     ],
