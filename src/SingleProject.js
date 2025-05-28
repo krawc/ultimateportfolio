@@ -109,16 +109,36 @@ class SingleProject extends React.Component {
 
 
 
-    const images = this.state.project ? this.state.project.images.map((item, key) => {
-      return (
-        <div className="single-image">
-          <Image container={this.imageContainer1} src={item} altSrc={item} />
-          <i className="ion ion-load-d"></i>
+    const { project } = this.state;
+
+    let mediaContent;
+
+    if (project.links && project.links.length > 0) {
+      mediaContent = (
+        <div className="SingleProject-links">
+          {project.links.map((link, idx) => (
+            <div className="project-link-card" key={idx} style={{ backgroundImage: `url(${link.img})` }}>
+              <div className="project-link-overlay">
+                <h2>{link.title}</h2>
+                <a href={link.url} target="_blank" rel="noopener noreferrer">{link.btnText}</a>
+              </div>
+            </div>
+          ))}
         </div>
-      )
-    })
-    :
-    ''
+      );
+    } else if (project.images && project.images.length > 0) {
+      mediaContent = (
+        <div className="SingleProject-slider" ref={(node) => { this.imageContainer1 = node; }} style={{ transform: 'translateX(-' + (this.state.currentSlide * 100) + '%)' }}>
+          {project.images.map((item, key) => (
+            <div className="single-image" key={key}>
+              <Image container={this.imageContainer1} src={item} altSrc={item} />
+              <i className="ion ion-load-d"></i>
+            </div>
+          ))}
+        </div>
+      );
+    }
+
 
     return (
       <ReactCSSTransitionGroup
@@ -138,8 +158,15 @@ class SingleProject extends React.Component {
           <div className="SingleProject-paragraph" dangerouslySetInnerHTML={{__html: md.render(this.state.project.description)}} />
         </div>
           <div className="SingleProject-image">
-            <div className="SingleProject-slider" unmountonexit ref={(node) => { this.imageContainer1 = node; }} style={{transform: 'translateX(-' + (this.state.currentSlide * 100) + '%)'}}>
-            {images}
+            <div className="SingleProject-image">
+              {mediaContent}
+              {!project.links && (
+                <div className={"SingleProject-arrows"}>
+                  <i className={"ion ion-chevron-left " + (this.state.currentSlide > 0 ? "arrow-show" : "arrow-hide")} onClick={this.slideBack}></i>
+                  <i className={"ion ion-chevron-right " + ((this.state.project.images.length - 1) === this.state.currentSlide ? "arrow-hide" : "arrow-show")} onClick={this.slideForward}></i>
+                </div>
+              )}
+            </div>
             <div className="single-image">
             <Image src={'https://krawc.space/'} altSrc={'https://krawc.space/'} />
             <i className="ion ion-load-d"></i>

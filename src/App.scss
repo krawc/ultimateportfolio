@@ -582,3 +582,40 @@ Note: Beware of modifying this element as it can break the animations - you shou
     flex: 0 0 50%;
   }
 }
+
+.SingleProject-links {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 20px 0;
+}
+
+.project-link-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px solid #ddd;
+  padding: 20px;
+  background: #fff;
+}
+
+.project-link-img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.project-link-info h2 {
+  margin: 0 0 10px 0;
+}
+
+.project-link-btn {
+  background: black;
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 5px;
+}

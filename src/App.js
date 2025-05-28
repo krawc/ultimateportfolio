@@ -10,17 +10,26 @@ import ProjectsContext from './ProjectsContext';
 
 
 const projectsRaw = [
-
   {
     "id": 1,
     "title": "BMW AG",
     "description": "During my internship at BMW's in-car voice assistant team, I supported the integration of large language models into automotive UX. My work helped define the assistant's interaction style by contributing to the development of a fine-tuning dataset and prompt design. A feedback platform I co-developed enabled compliant, large-scale collection of user preferences around verbosity. Insights from user studies shaped key design decisions and contributed directly to team-wide strategy updates. I also helped improve onboarding UX in the demo app, making the assistant easier to showcase to internal and external stakeholders.",
     "type": "work",
     "year": "2025",
-    "images": [
-      "https://www.dropbox.com/scl/fi/3brilbdwe0oipe1z8bkio/bmw1.png?rlkey=e6549e6fc0zo2n49wjr83dkui&st=jmyai39z&raw=1",
-      "https://www.dropbox.com/scl/fi/hdy9a9elfmeves7sz0s1c/bmw2.png?rlkey=jewl441r7glxv6nmrph2qcfm0&st=68aev8dl&raw=1"
-    ]
+    "links": [
+      {
+        "title": "HUD ISLAND",
+        "btnText": "VIEW DESIGN",
+        "url": "https://www.figma.com/proto/iJS5uppZ4LN6aYKB1cheev/Chat-BMW-island?page-id=10%3A16&node-id=13-1621&starting-point-node-id=13%3A1621&scaling=scale-down-width&content-scaling=fixed&show-proto-sidebar=1&t=ABtnzJ6NtxqnHdXt-1",
+        "img": "https://www.dropbox.com/scl/fi/3brilbdwe0oipe1z8bkio/bmw1.png?rlkey=e6549e6fc0zo2n49wjr83dkui&st=jmyai39z&raw=1"
+      },
+      {
+        "title": "HUMAN FEEDBACK & ANSWER LENGTH",
+        "btnText": "VIEW CASE STUDY",
+        "url": "https://www.figma.com/proto/iJS5uppZ4LN6aYKB1cheev/Chat-BMW-island?page-id=10%3A16&node-id=13-1621&starting-point-node-id=13%3A1621&scaling=scale-down-width&content-scaling=fixed&show-proto-sidebar=1&t=ABtnzJ6NtxqnHdXt-1",
+        "img": "https://www.dropbox.com/scl/fi/hdy9a9elfmeves7sz0s1c/bmw2.png?rlkey=jewl441r7glxv6nmrph2qcfm0&st=68aev8dl&raw=1"
+      }
+    ],
   },
   // {
   //   "id": 10,

@@ -480,3 +480,101 @@ input {
     flex: 0 0 50%; } }
 
 /*# sourceMappingURL=App.css.map */
+
+.SingleProject-links {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 20px 0;
+}
+
+.project-link-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px solid #ddd;
+  padding: 20px;
+  background: #fff;
+}
+
+.project-link-img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.project-link-info h2 {
+  margin: 0 0 10px 0;
+}
+
+.project-link-btn {
+  background: black;
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+
+.SingleProject-links {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.project-link-card {
+  position: relative;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: blur(0px); /* no blur here; we blur with a pseudo-element */
+}
+
+.project-link-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  filter: blur(8px);
+  transform: scale(1.1);
+  z-index: 0;
+}
+
+.project-link-overlay {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+  padding: 20px;
+}
+
+.project-link-overlay h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.project-link-overlay a {
+  display: inline-block;
+  padding: 10px 20px;
+  font-family: monospace;
+  border: 1px solid white;
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background 0.3s, color 0.3s;
+}
+
+.project-link-overlay a:hover {
+  background: white;
+  color: black;
+}
