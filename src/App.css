@@ -484,15 +484,15 @@ input {
 .SingleProject-links {
   display: flex;
   flex-direction: column;
-  gap: 40px;
-  padding: 20px 0;
+  flex: 0 0 100%;
+  gap: 0;
+  padding: 0;
 }
 
 .project-link-card {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  border: 1px solid #ddd;
   padding: 20px;
   background: #fff;
 }
@@ -522,7 +522,6 @@ input {
 .SingleProject-links {
   display: flex;
   flex-direction: column;
-  gap: 30px;
 }
 
 .project-link-card {
@@ -554,6 +553,7 @@ input {
   text-align: center;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
   padding: 20px;
+  font-family: 'RobotoMono';
 }
 
 .project-link-overlay h2 {
@@ -571,7 +571,7 @@ input {
   color: white;
   text-decoration: none;
   font-size: 1rem;
-  transition: background 0.3s, color 0.3s;
+  transition: background 0.1s, color 0.1s;
 }
 
 .project-link-overlay a:hover {

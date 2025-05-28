@@ -153,31 +153,24 @@ class SingleProject extends React.Component {
 
     {this.state.isVisible ?
       <div className={"SingleProject " + (this.state.loaded ? 'toggled' : 'untoggled')}>
-        <div className="SingleProject-content">
-          <h1><button className="Home-buttons" onClick={this.backToWork}><i className="ion ion-chevron-left"></i>{" BACK"}</button><a target="_blank" href={this.state.project.id}>{this.state.project.title}</a></h1>
-          <div className="SingleProject-paragraph" dangerouslySetInnerHTML={{__html: md.render(this.state.project.description)}} />
-        </div>
-          <div className="SingleProject-image">
-            <div className="SingleProject-image">
-              {mediaContent}
-              {!project.links && (
-                <div className={"SingleProject-arrows"}>
-                  <i className={"ion ion-chevron-left " + (this.state.currentSlide > 0 ? "arrow-show" : "arrow-hide")} onClick={this.slideBack}></i>
-                  <i className={"ion ion-chevron-right " + ((this.state.project.images.length - 1) === this.state.currentSlide ? "arrow-hide" : "arrow-show")} onClick={this.slideForward}></i>
-                </div>
-              )}
-            </div>
-            <div className="single-image">
-            <Image src={'https://krawc.space/'} altSrc={'https://krawc.space/'} />
-            <i className="ion ion-load-d"></i>
-          </div>
-            </div>
-            <div className={"SingleProject-arrows "} style={{position: 'absolute', }}>
-              <i className={"ion ion-chevron-left " + (this.state.currentSlide > 0 ? "arrow-show" : "arrow-hide")} onClick={this.slideBack}></i>
-              <i className={"ion ion-chevron-right " + ((this.state.galleryLength - 1) === this.state.currentSlide ? "arrow-hide" : "arrow-show")} onClick={this.slideForward}></i>
-            </div>
-          </div>
+      <div className="SingleProject-content">
+        <h1><button className="Home-buttons" onClick={this.backToWork}><i className="ion ion-chevron-left"></i>{" BACK"}</button><a target="_blank" href={this.state.project.id}>{this.state.project.title}</a></h1>
+        <div className="SingleProject-paragraph" dangerouslySetInnerHTML={{__html: md.render(this.state.project.description)}} />
       </div>
+      <div className="SingleProject-image">
+        {mediaContent}
+        {!project.links && (
+          <div className={"SingleProject-arrows"}>
+            <i className={"ion ion-chevron-left " + (this.state.currentSlide > 0 ? "arrow-show" : "arrow-hide")} onClick={this.slideBack}></i>
+            <i className={"ion ion-chevron-right " + ((this.state.project.images.length - 1) === this.state.currentSlide ? "arrow-hide" : "arrow-show")} onClick={this.slideForward}></i>
+          </div>
+        )}
+      </div>
+          <div className={"SingleProject-arrows "} style={{position: 'absolute', }}>
+            <i className={"ion ion-chevron-left " + (this.state.currentSlide > 0 ? "arrow-show" : "arrow-hide")} onClick={this.slideBack}></i>
+            <i className={"ion ion-chevron-right " + ((this.state.galleryLength - 1) === this.state.currentSlide ? "arrow-hide" : "arrow-show")} onClick={this.slideForward}></i>
+          </div>
+        </div>
       :
       null}
       </ReactCSSTransitionGroup>
