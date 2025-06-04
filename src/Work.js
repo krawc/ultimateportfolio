@@ -133,7 +133,6 @@ render() {
           <a className={"section-link " + (this.state.activeSection === '' ? 'active' : '')} onClick={() => this.switchActive('')}>ALL</a>
           <a className={"section-link " + (this.state.activeSection === 'work' ? 'active' : '')} onClick={() => this.switchActive('work')}>WORK</a>
           <a className={"section-link " + (this.state.activeSection === 'play' ? 'active' : '')} onClick={() => this.switchActive('play')}>PLAY</a>
-          <a className="section-link" target="_blank" href="https://medium.com/@krawc" >WRITING</a>
         </h1>
       </header>
       <main className={"work-projects"}>
